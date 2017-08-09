@@ -40,11 +40,10 @@ public class ComplainStatus implements Serializable {
     @Basic(optional = false)
     @Column(name = "color")
     private String color;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "statusId")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "status")
     private List<Complain> complainList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "statusId")
-    private List<CustomerComplainStatus> customerComplainStatusList;
-
+    //@OneToMany(cascade = CascadeType.ALL, mappedBy = "statusId")
+    
     public ComplainStatus() {
     }
 
@@ -90,37 +89,6 @@ public class ComplainStatus implements Serializable {
         this.complainList = complainList;
     }
 
-    public List<CustomerComplainStatus> getCustomerComplainStatusList() {
-        return customerComplainStatusList;
-    }
-
-    public void setCustomerComplainStatusList(List<CustomerComplainStatus> customerComplainStatusList) {
-        this.customerComplainStatusList = customerComplainStatusList;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (statusId != null ? statusId.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof ComplainStatus)) {
-            return false;
-        }
-        ComplainStatus other = (ComplainStatus) object;
-        if ((this.statusId == null && other.statusId != null) || (this.statusId != null && !this.statusId.equals(other.statusId))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "com.leapfrog.core.entity.ComplainStatus[ statusId=" + statusId + " ]";
-    }
+    
     
 }

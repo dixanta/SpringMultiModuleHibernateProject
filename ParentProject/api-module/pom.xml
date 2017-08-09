@@ -43,7 +43,12 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-        </dependency>                                     
+        </dependency>       
+        <dependency>
+            <groupId>com.leapfrog</groupId>
+            <artifactId>core-module</artifactId>
+            <version>1.0</version>
+        </dependency>                                         
     </dependencies>
 
     <build>

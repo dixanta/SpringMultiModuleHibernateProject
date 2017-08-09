@@ -53,7 +53,18 @@
             <groupId>org.thymeleaf</groupId>
             <artifactId>thymeleaf-spring4</artifactId>
             <version>3.0.7.RELEASE</version>
-        </dependency>                                                    
+        </dependency> 
+        <dependency>
+            <groupId>com.leapfrog</groupId>
+            <artifactId>core-module</artifactId>
+            <version>1.0</version>
+        </dependency>   
+        <dependency>
+            <groupId>com.leapfrog</groupId>
+            <artifactId>api-module</artifactId>
+            <version>1.0</version>
+            <type>war</type>
+        </dependency>                                                            
     </dependencies>
 
     <build>

@@ -40,7 +40,7 @@ public class Department implements Serializable {
     @Basic(optional = false)
     @Column(name = "email")
     private String email;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "departmentId")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "department")
     private List<Complain> complainList;
 
     public Department() {

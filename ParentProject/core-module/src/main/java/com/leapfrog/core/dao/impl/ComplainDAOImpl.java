@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.leapfrog.core.dao;
+package com.leapfrog.core.dao.impl;
 
+import com.leapfrog.core.dao.ComplainDAO;
 import com.leapfrog.core.entity.Complain;
-import com.leapfrog.core.entity.Customer;
-import java.util.List;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author USER
  */
-public interface CustomerDAO extends GenericDAO<Customer> {
-    List<Complain> getComplains(int id);
+@Repository(value = "complainDAO")
+public class ComplainDAOImpl extends GenericDAOImpl<Complain> implements ComplainDAO {
+    
 }

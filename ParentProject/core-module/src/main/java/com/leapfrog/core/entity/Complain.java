@@ -57,9 +57,7 @@ public class Complain implements Serializable {
     @JoinColumn(name = "department_id", referencedColumnName = "department_id")
     @ManyToOne(optional = false)
     private Department department;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "complainId")
-    private List<CustomerComplainStatus> customerComplainStatusList;
-
+    
     public Complain() {
     }
 
@@ -130,37 +128,5 @@ public class Complain implements Serializable {
         this.department = department;
     }
 
-    public List<CustomerComplainStatus> getCustomerComplainStatusList() {
-        return customerComplainStatusList;
-    }
-
-    public void setCustomerComplainStatusList(List<CustomerComplainStatus> customerComplainStatusList) {
-        this.customerComplainStatusList = customerComplainStatusList;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (complainId != null ? complainId.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Complain)) {
-            return false;
-        }
-        Complain other = (Complain) object;
-        if ((this.complainId == null && other.complainId != null) || (this.complainId != null && !this.complainId.equals(other.complainId))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "com.leapfrog.core.entity.Complain[ complainId=" + complainId + " ]";
-    }
     
 }
